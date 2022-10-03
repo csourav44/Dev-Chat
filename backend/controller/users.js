@@ -37,8 +37,9 @@ const register = async (req, res, next) => {
             email,
             password:encryptedpw,
         });
-        delete user.password;
-        return res.json({status:true , user});
+        // delete user.password;
+        delete user.password
+        return res.json({user ,status:true});           
     } catch (error) {
         next(error);
     }
