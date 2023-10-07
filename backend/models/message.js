@@ -13,7 +13,12 @@ const MessageSchema = mongoose.Schema({
             ref:"User",
             required:true,
         },
+        status:{
+            sent:Boolean,
+            read:Boolean
+        }
     },
+    
     {
         timestamps:true,
     },

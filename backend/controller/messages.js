@@ -26,6 +26,10 @@ const addMessage = async(req,res,next)=>{
             message:{text:message},
             users:[from , to],
             sender:from,
+            status:{
+                sent:true,
+                read:false,
+            }
         });
         if (data) return res.json({ msg: "Message added successfully." });
         else return res.json({ msg: "Failed to add message to the database" });
